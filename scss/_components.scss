@@ -53,3 +53,27 @@
         color:$color-dark
     }
 }
+
+.card{
+    width: 33.3333%;
+    height: 30vw;
+    position:relative;
+    
+
+    &-overlay {
+        position: absolute;
+        background-color: rgba($color-primary,.6);
+        color: $color-white;
+        z-index:1;
+        // height:300px;
+        // width: 300px;
+        @include flexcenter;
+        flex-direction: column;
+    }
+    &-img{
+        width: 400px;
+        height: 400px;
+        object-fit: cover;
+        opacity: .5;
+    }
+}

@@ -55,25 +55,69 @@
 }
 
 .card{
-    width: 33.3333%;
+    width: 100%;
     height: 30vw;
+    margin: 10px;
     position:relative;
+
+    overflow: hidden;
     
+   
 
     &-overlay {
         position: absolute;
         background-color: rgba($color-primary,.6);
-        color: $color-white;
+        color: $color-white;left: -100%; // for hide then hover 
+
         z-index:1;
-        // height:300px;
-        // width: 300px;
+        height: 100%; /* Full height of parent */
+        width: 100%; /* Full width of parent */
         @include flexcenter;
         flex-direction: column;
+
+        transition: left .7s;
+
+        &-heading{
+            font-family: $font-nunito;
+            font-size: 50px;
+            @include textStyles(capitalize)
+        }
+        &-paragraph{
+            font-family: $font-josefinSans;
+            font-size: 30px;
+            margin-bottom: 30px;
+            @include textStyles(capitalize)
+        }
+        &-btn{
+            width: 150px;
+            height: 40px;
+            color: $color-primary;
+            background-color: $color-white;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid $color-primary;
+            border-radius: 20px;
+            outline: none;
+            cursor: pointer;
+
+            &:hover{
+                background-color: $color-dark;
+                color:$color-primary;
+            }
+        }
     }
     &-img{
-        width: 400px;
-        height: 400px;
+        width: 100%;
+        height: 100%;
         object-fit: cover;
         opacity: .5;
+    }
+
+    // card ah hover panna athu theriyira mari 
+    // default ah left:-100% endu podda theriyama irukum
+    &:hover .card-overlay{
+        left:0;
     }
 }
